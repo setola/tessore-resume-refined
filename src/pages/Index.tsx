@@ -3,6 +3,7 @@ import CurriculumTimeline from "@/components/CurriculumTimeline";
 import ProjectsGrid from "@/components/ProjectsGrid";
 import SkillList from "@/components/SkillList";
 import { resumeData } from "@/data/resume";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const Index = () => {
   const { basics, work, projects, skills } = resumeData;
@@ -11,6 +12,15 @@ const Index = () => {
     <main className="min-h-screen bg-background text-foreground font-sans">
       <header className="py-10 mb-12 border-b border-[#242733] animate-fade-in">
         <div className="container flex flex-col items-center justify-center">
+          <Avatar className="h-24 w-24 mb-4 shadow-lg border-2 border-[#223140]">
+            <AvatarImage
+              src="https://www.gravatar.com/avatar/0a45f1fb68f93a8a28bac085c505eacd?size=800"
+              alt={basics.name}
+            />
+            <AvatarFallback>
+              {basics.name ? basics.name[0] : "?"}
+            </AvatarFallback>
+          </Avatar>
           <h1 className="text-4xl font-bold tracking-tight mb-2">{basics.name}</h1>
           <h2 className="text-lg text-muted font-mono">
             {basics.label}
