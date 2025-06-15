@@ -22,6 +22,12 @@ export interface Skill {
   keywords: string[];
 }
 
+export interface Profile {
+  network: string;
+  username?: string;
+  url: string;
+}
+
 export interface ResumeData {
   basics: {
     name: string;
@@ -29,6 +35,8 @@ export interface ResumeData {
     email: string;
     website: string;
     summary: string;
+    picture: string;
+    profiles: Profile[];
   };
   work: Experience[];
   projects: Project[];
@@ -42,6 +50,19 @@ export const resumeData: ResumeData = {
     email: "emanuele@tessore.com",
     website: "https://www.emanueletessore.com",
     summary: "Sviluppatore, consulente e progettista software con esperienza su web, mobile, cloud e architetture moderne.",
+    picture: "https://www.gravatar.com/avatar/0a45f1fb68f93a8a28bac085c505eacd?size=800",
+    profiles: [
+      {
+        network: "GitHub",
+        username: "setola",
+        url: "https://github.com/setola"
+      },
+      {
+        network: "LinkedIn",
+        username: "emanueletessore",
+        url: "https://www.linkedin.com/in/emanueletessore/"
+      }
+    ]
   },
   work: [
     {

@@ -14,7 +14,7 @@ const Index = () => {
         <div className="container flex flex-col items-center justify-center">
           <Avatar className="h-24 w-24 mb-4 shadow-lg border-2 border-[#223140]">
             <AvatarImage
-              src="https://www.gravatar.com/avatar/0a45f1fb68f93a8a28bac085c505eacd?size=800"
+              src={basics.picture}
               alt={basics.name}
             />
             <AvatarFallback>
@@ -29,8 +29,17 @@ const Index = () => {
           <div className="mt-3 flex gap-6 text-accent">
             <a href={`mailto:${basics.email}`} className="hover:underline">Email</a>
             <a href={basics.website} target="_blank" rel="noopener noreferrer">Sito</a>
-            <a href="https://github.com/setola" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="https://www.linkedin.com/in/emanueletessore/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            {basics.profiles.map((profile) => (
+              <a 
+                key={profile.network} 
+                href={profile.url} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                {profile.network}
+              </a>
+            ))}
           </div>
         </div>
       </header>
