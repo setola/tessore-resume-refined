@@ -5,60 +5,60 @@ tasks:
   build:
     desc: Build the Docker image
     cmds:
-      - docker-compose build
+      - docker compose build
 
   up:
     desc: Start the development server
     cmds:
-      - docker-compose up
+      - docker compose up
 
   up-d:
     desc: Start the development server in detached mode
     cmds:
-      - docker-compose up -d
+      - docker compose up -d
 
   down:
     desc: Stop the development server
     cmds:
-      - docker-compose down
+      - docker compose down
 
   logs:
     desc: Show logs from the app container
     cmds:
-      - docker-compose logs -f app
+      - docker compose logs -f app
 
   shell:
     desc: Open a shell in the app container
     cmds:
-      - docker-compose exec app sh
+      - docker compose exec app sh
 
   install:
     desc: Install npm dependencies in container
     cmds:
-      - docker-compose exec app npm install
+      - docker compose exec app npm install
 
   lint:
     desc: Run ESLint in container
     cmds:
-      - docker-compose exec app npm run lint
+      - docker compose exec app npm run lint
 
   build-app:
     desc: Build the application in container
     cmds:
-      - docker-compose exec app npm run build
+      - docker compose exec app npm run build
 
   clean:
     desc: Remove containers and volumes
     cmds:
-      - docker-compose down -v
-      - docker-compose rm -f
+      - docker compose down -v
+      - docker compose rm -f
 
   restart:
     desc: Restart the development server
     cmds:
-      - docker-compose restart app
+      - docker compose restart app
 
   npm:
     desc: Run npm commands in container (usage: task npm -- <command>)
     cmds:
-      - docker-compose exec app npm {{.CLI_ARGS}}
+      - docker compose exec app npm {{.CLI_ARGS}}

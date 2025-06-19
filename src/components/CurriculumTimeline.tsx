@@ -17,7 +17,7 @@ const CurriculumTimeline: React.FC<Props> = ({ experiences }) => (
           </span>
           <div className="text-lg font-semibold mt-1">{exp.position}{' '}
             <span className="text-accent font-normal">@</span>{" "}
-            <a href={exp.website} rel="noopener noreferrer" target="_blank" className="">{exp.company}</a>
+            <a href={exp.website} rel="noopener noreferrer" target="_blank" className="">{exp.name}</a>
           </div>
           {exp.location && (
             <div className="text-xs text-muted">{exp.location}</div>

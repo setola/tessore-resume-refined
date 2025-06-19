@@ -4,6 +4,8 @@ import ProjectsGrid from "@/components/ProjectsGrid";
 import SkillList from "@/components/SkillList";
 import { resumeData } from "@/data/resume";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import markdown from '@wcj/markdown-to-html';
+//import DOMPurify from 'dompurify';
 
 const Index = () => {
   const { basics, work, projects, skills } = resumeData;
@@ -25,7 +27,7 @@ const Index = () => {
           <h2 className="text-lg text-muted font-mono">
             {basics.label}
           </h2>
-          <p className="mt-4 max-w-2xl text-center text-muted text-base">{basics.summary}</p>
+          { <div className="mt-4 max-w-2xl text-center text-muted text-base" dangerouslySetInnerHTML={{ __html: markdown(basics.summary) }} /> }
           <div className="mt-3 flex gap-6 text-accent">
             <a href={`mailto:${basics.email}`} className="hover:underline">Email</a>
             <a href={basics.website} target="_blank" rel="noopener noreferrer">Sito</a>
