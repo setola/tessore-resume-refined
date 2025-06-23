@@ -1,14 +1,14 @@
 services:
   app:
-    build:
-      context: .
-      dockerfile: Dockerfile.dev
+    image: node:alpine
     ports:
       - "8080:8080"
     volumes:
       - .:/app
-      - /app/node_modules
     environment:
       - NODE_ENV=development
     stdin_open: true
     tty: true
+    working_dir: /app
+    command: ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
+

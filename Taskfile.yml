@@ -1,5 +1,4 @@
-
-version: '3'
+version: "3"
 
 tasks:
   build:
@@ -59,6 +58,6 @@ tasks:
       - docker compose restart app
 
   npm:
-    desc: Run npm commands in container (usage: task npm -- <command>)
+    desc: "Run npm commands in container (usage: task npm -- <command>)"
     cmds:
-      - docker compose exec app npm {{.CLI_ARGS}}
+      - docker compose run --rm app npm {{.CLI_ARGS}}
