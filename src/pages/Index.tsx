@@ -27,15 +27,15 @@ const Index = () => {
           <h2 className="text-lg text-muted font-mono">
             {basics.label}
           </h2>
-          { <div className="mt-4 max-w-2xl text-center text-muted text-base" dangerouslySetInnerHTML={{ __html: markdown(basics.summary) }} /> }
+          {<div className="mt-4 max-w-2xl text-center text-muted space-y-4 text-base" dangerouslySetInnerHTML={{ __html: markdown(basics.summary) }} />}
           <div className="mt-3 flex gap-6 text-accent">
             <a href={`mailto:${basics.email}`} className="hover:underline">Email</a>
-            <a href={basics.website} target="_blank" rel="noopener noreferrer">Sito</a>
+            <a href={basics.website} target="_blank" rel="noopener noreferrer">Web</a>
             {basics.profiles.map((profile) => (
-              <a 
-                key={profile.network} 
-                href={profile.url} 
-                target="_blank" 
+              <a
+                key={profile.network}
+                href={profile.url}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="hover:underline"
               >

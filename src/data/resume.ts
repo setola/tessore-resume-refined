@@ -13,7 +13,7 @@ export interface Experience {
 }
 
 export interface Location {
-  countryCode?: string; 
+  countryCode?: string;
   region?: string;
   city?: string;
   address?: string;
@@ -50,7 +50,7 @@ export interface ResumeData {
     name: string;
     label: string;
     email: string;
-    website: string;
+    website?: string;
     summary: string;
     location?: Location;
     picture: string;
@@ -81,7 +81,7 @@ export const resumeData: ResumeData = {
         "url": "https://github.com/setola"
       },
       {
-        "network": "bitbucket",
+        "network": "BitBucket",
         "username": "Setola",
         "url": "https://bitbucket.org/setola/"
       }
@@ -92,7 +92,7 @@ export const resumeData: ResumeData = {
       "name": "DMIND",
       "position": "Dev Ops Manager",
       "department": "Lab (IT dept.)",
-      "website": "https://www.digital-mind.it/",
+      "website": "https://www.dmind.it/",
       "startDate": "2022-06-01",
       "summary": "DMIND is a multi-channel Communication Agency with a strategic consulting approach. We are an interdisciplinary team, organized in dedicated business units, capable of managing all communication assets on and off line.",
       "highlights": [
@@ -176,7 +176,6 @@ export const resumeData: ResumeData = {
       "name": "Citex Network",
       "position": "Co-Owner, CTO",
       "department": "IT Ops",
-      "website": "",
       "startDate": "2008-09-27",
       "endDate": "2018-09-27",
       "summary": "",
@@ -194,7 +193,7 @@ export const resumeData: ResumeData = {
       "website": "http://www.zip-progetti.it/",
       "startDate": "2004-09-27",
       "endDate": "2008-09-27",
-      "summary": "Communication Agency specialized in radio advertising with a press office delivering content about local news",
+      "summary": "Communication Agency specialized in radio advertising with a press office delivering multimedial content about local news",
       "highlights": [
         "Developing and maintaining of audio and video streaming equipment",
         "Setup and configuration of web-radio software integrated with website",
