@@ -6,7 +6,7 @@ interface Props {
 }
 
 const ProjectsGrid: React.FC<Props> = ({ projects }) => (
-  <section aria-label="Progetti curati" className="mt-10">
+  <section aria-label="Project I've worked on" className="mt-10">
     <h2 className="text-2xl mb-6 tracking-tight">Progetti curati</h2>
     <ul className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
       {projects.map((proj) => (
@@ -20,7 +20,14 @@ const ProjectsGrid: React.FC<Props> = ({ projects }) => (
               proj.name
             )}
           </div>
-          <div className="text-muted text-sm">{proj.description}</div>
+          <div className="text-muted">{proj.description}</div>
+          {proj.highlights && proj.highlights.length > 0 && (
+            <ul className="mt-2 list-disc pl-5 text-base leading-relaxed text-muted">
+              {proj.highlights.map((highlight, index) => (
+                <li key={index} className="mb-1">{highlight}</li>
+              ))}
+            </ul>
+          )}
         </li>
       ))}
     </ul>
