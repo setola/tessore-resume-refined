@@ -266,6 +266,18 @@ export const resumeData: ResumeData = {
       ]
     },
     {
+      "name": "Cloud Engeneering",
+      "level": "Advanced",
+      "keywords": [
+        "Kubernetes",
+        "Docker",
+        "AWS",
+        "GCE",
+        "DigitalOcean",
+        "Ansible"
+      ]
+    },
+    {
       "name": "Linux System Administration",
       "level": "Advanced",
       "keywords": ["CLI", "SSH", "Puppet", "Ubuntu", "Kubernetes"]
