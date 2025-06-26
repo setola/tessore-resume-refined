@@ -7,14 +7,14 @@ interface Props {
 
 const ProjectsGrid: React.FC<Props> = ({ projects }) => (
   <section aria-label="Project I've worked on" className="mt-10">
-    <h2 className="text-2xl mb-6 tracking-tight">Progetti curati</h2>
-    <ul className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+    <h2 className="text-2xl mb-6 tracking-tight">Main Projects</h2>
+    <ul className="grid gap-4 md:grid-cols-1 lg:grid-cols-2">
       {projects.map((proj) => (
         <li key={proj.name} className="bg-[#141724] p-6 rounded-lg border border-[#242733] hover:scale-105 transition-transform">
           <div className="text-lg font-semibold text-foreground mb-1">
             {proj.url ? (
               <a href={proj.url} target="_blank" rel="noopener noreferrer" className="">
-                {proj.name}
+                {proj.name} @ {proj.entity || "Unknown Company"}
               </a>
             ) : (
               proj.name
